@@ -1,0 +1,18 @@
+<div class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+  <% @music.each do |song| %>
+    <div class="card" style="padding: 2em;">
+      <div class="row g-0">
+        <div class="col-md-3">
+          <iframe src="<%= song.url %>"></iframe>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h4 class="card-title"><%= song.title %></h4>
+            <br>
+            <p class="card-text"><%= song.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
