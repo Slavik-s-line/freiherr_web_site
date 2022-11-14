@@ -1,9 +1,9 @@
-<div class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+<div class="text-center text-lg-center text-dark" style="background-color: #ECEFF1">
   <% @articles.each do |article| %>
     <div class="card" style="padding: 2em;">
       <div class="row g-0">
         <div class="col-md-3">
-          <%= image_tag article.image if article.image.attached? %>
+          <%= image_tag article.image.variant(resize_to_limit: [300, 300]) if article.image.attached? %>
         </div>
         <div class="col-md-8">
           <div class="card-body">

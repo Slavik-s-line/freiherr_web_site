@@ -9,7 +9,6 @@ ActiveAdmin.register Article do
     end
     column :title
     column :description
-    column :text
     column :created_at
     column :updated_at
     actions
