@@ -7,13 +7,30 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="btn btn-outline-dark" role="button" href="/music">Музика</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-dark" role="button" href="/article">Статті</a>
-        </li>
+      <% if current_user %>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="btn btn-outline-dark" role="button" href="/music">Музика</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-dark" role="button" href="/article">Статті</a>
+          </li>
+        </ul>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropstart" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div style="height: 30px;">
+              <img width="30px" height="30px" src="https://cdn.britannica.com/26/157026-050-08ED6418/Sylvester-Stallone-1998.jpg">
+            </div>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/edit_user_profile" role="button">Edit personal information</a></li>
+          </ul>
+        </div>
+        <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-outline-dark" %>
+      <% else %>
+        <%= link_to "Увійти", new_user_session_path, class: "btn btn-outline-dark" %>
+        <%= link_to "Реєстрація", new_user_registration_path, class: "btn btn-outline-dark" %>
+      <% end %>
     </div>
   </div>
 </nav>
