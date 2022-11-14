@@ -3,13 +3,13 @@
     <div class="card" style="padding: 2em;">
       <div class="row g-0">
         <div class="col-md-3">
-          <%= image_tag article.image %>
+          <%= image_tag article.image if article.image.attached? %>
         </div>
         <div class="col-md-8">
           <div class="card-body">
             <h4 class="card-title"><%= article.title %></h4>
             <p class="card-text"><%= article.description %></p>
-            <a class="btn btn-outline-dark" role="button" href="/music">Читати</a>
+            <a class="btn btn-outline-dark" role="button" href="/article/<%= article.id %>">Читати</a>
           </div>
         </div>
       </div>

@@ -1,2 +1,13 @@
-<h1>Article#show</h1>
-<p>Find me in app/views/article/show.html.erb</p>
+<div class="card text-center">
+  <div class="card-header" style="padding: 1em;">
+    <h3><%= @article.title %></h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title" style="padding: 1em;" ><%= @article.description %></h5>
+    <hr>
+    <p class="card-text" style="padding: 1em;"><%= @article.text %></p>
+  </div>
+  <div class="card-footer text-muted">
+    <%= @article.created_at.strftime("%B %d, %Y") %>
+  </div>
+</div>
