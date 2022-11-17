@@ -16,4 +16,4 @@ Article.find_or_create_by(title: 'Перша стаття',
                           I recently discovered the dark academia aesthetic. I`ve never been so drawn to an aesthetic before! Dark Academia embodies so many things I already enjoy.',
                           text: 'some text')
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
